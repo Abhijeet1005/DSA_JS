@@ -18,6 +18,9 @@ let stack = (function(maxSize){
             return [...arr]
             
         },
+        display: ()=>{
+            return arr
+        },
     }
 })(maxSize)
 

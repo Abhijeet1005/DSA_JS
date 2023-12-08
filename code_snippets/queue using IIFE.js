@@ -9,6 +9,9 @@ let queue = (()=>{
         dequeue: (elem)=>{
             arr.pop()
             return arr
+        },
+        display: ()=>{
+            return arr
         }
     }
 })()
@@ -19,3 +22,4 @@ console.log(queue.enqueue(20))
 console.log(queue.enqueue(30))
 console.log(queue.enqueue(40))
 console.log(queue.dequeue())
+console.log(queue.display())
