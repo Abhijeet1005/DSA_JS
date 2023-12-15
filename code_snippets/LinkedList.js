@@ -24,8 +24,17 @@ class LinkedList{
         this.length++;
     }
     pop(){
-        if(this.length >1){
-            let temp = this.head
+        let temp = this.head
+        if(this.length < 1) return undefined
+
+        else if(this.length === 1){
+            this.head = null
+            this.tail = null
+            this.length--
+            return temp
+        }
+        
+        else if(this.length >1){
             let pre = this.head
             while(temp.next != null){
                 pre = temp
@@ -36,16 +45,8 @@ class LinkedList{
             this.length--
             return temp
         }
-        if(this.length = 1){
-            let temp = this.head
-            this.head = null
-            this.tail = null
-            this.length--
-            return temp
-        }
-        if(this.length <= 0) return undefined
-    }
 
+    }
 }
 
 // const LL = new LinkedList(10)
