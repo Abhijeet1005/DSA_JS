@@ -19,9 +19,12 @@ class LinkedList{
             this.tail = newNode;
             this.length++
         }
-        this.tail.next = newNode;
-        this.tail = newNode;
-        this.length++;
+        else{
+            this.tail.next = newNode;
+            this.tail = newNode;
+            this.length++;
+        }
+
     }
     pop(){
         let temp = this.head
@@ -33,7 +36,7 @@ class LinkedList{
             this.length--
             return temp
         }
-        
+
         else if(this.length >1){
             let pre = this.head
             while(temp.next != null){
@@ -45,16 +48,24 @@ class LinkedList{
             this.length--
             return temp
         }
-
+    }
+    unshift(value){
+        const newNode = new Node(value)
+        if(this.head === null){
+            this.head = newNode
+            this.tail = newNode
+            this.length++
+        }
+        else{
+            newNode.next = this.head
+            this.head = newNode
+            this.length++
+        }
     }
 }
 
-// const LL = new LinkedList(10)
-// LL.push(20)
-// LL.push(30)
-// LL.push(40)
-// LL.pop()
-// LL.pop()
-// console.log(LL.pop())
-// console.log(LL.pop())
-// console.log(LL.pop())
+const LL = new LinkedList(10)
+LL.pop()
+console.log(LL)
+LL.unshift(90)
+console.log(LL)
