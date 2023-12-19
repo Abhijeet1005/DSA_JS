@@ -134,7 +134,9 @@ class LinkedList{
             return this
         }
     }
-    
+    // findMiddleNode() {
+        
+    // }
 }
 
 const LL = new LinkedList(10)
