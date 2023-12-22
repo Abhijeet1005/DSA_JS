@@ -46,4 +46,25 @@ class BST{
             }
         }
     }
+    contains(val){
+        if(!this.root) return null
+        else{
+            let temp = this.root
+            while(temp){
+                if(val === temp.value) return temp
+                else if(val < temp.value){
+                    temp = temp.left
+                }
+                else{
+                    temp = temp.right
+                }
+            }
+            return null
+        }
+    }
+    minValueNode(currentNode){
+        while(currentNode){
+            if(currentNode.left.value < currentNode.value) currentNode = currentNode.left
+        }return null
+    }
 }
